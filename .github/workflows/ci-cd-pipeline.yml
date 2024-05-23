@@ -45,6 +45,12 @@ jobs:
       run: |
         docker push dd000697/my_model:latest
 
+    - name: Debug Working Directory
+      run: |
+        echo "Current working directory: $(pwd)"
+        echo "Listing files:"
+        ls -la
+
     - name: Deploy
       run: |
         bash api/run_ci_cd.sh
