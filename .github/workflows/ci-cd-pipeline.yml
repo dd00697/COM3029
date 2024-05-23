@@ -38,7 +38,7 @@ jobs:
 
     - name: Tag Docker image
       run: |
-        docker tag my_model:latest yourdockerusername/my_model:latest
+        docker tag my_model:latest dd00697/my_model:latest
 
     - name: Log in to Docker Hub
       env:
@@ -49,4 +49,4 @@ jobs:
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker push yourdockerusername/my_model:latest
+        docker push dd00697/my_model:latest
