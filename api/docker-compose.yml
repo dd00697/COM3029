@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    image: dd00697/my_model:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=${HOST}
+      - DATABASE=${DATABASE}
+      - DBUSERNAME=${DBUSERNAME}
+      - PASSWORD=${PASSWORD}
+    volumes:
+      - .:/app
+    command: bash -c "source run_app.sh"

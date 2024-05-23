@@ -24,21 +24,15 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
-    - name: Run tests
-      run: |
-        echo "Running tests..."
-        # Placeholder for actual tests
-        # pytest
+        pip install -r api/requirements.txt
 
     - name: Build Docker image
       run: |
-        docker build -t my_model:latest .
+        docker build -t my_model:latest -f api/Dockerfile api/
 
     - name: Tag Docker image
       run: |
-        docker tag my_model:latest dd000697/my_model:latest
+        docker tag my_model:latest dd00697/my_model:latest
 
     - name: Log in to Docker Hub
       env:
@@ -49,4 +43,8 @@ jobs:
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker push dd000697/my_model:latest
+        docker push dd00697/my_model:latest
+
+    - name: Deploy
+      run: |
+        bash api/run_ci_cd.sh

@@ -12,6 +12,6 @@ echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME" --password-
 # Push the Docker image to Docker Hub
 docker push dd00697/my_model:latest
 
-# Deploy the Docker container 
+# Deploy the Docker container
 docker-compose down
 docker-compose up -d
