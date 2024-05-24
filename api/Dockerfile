@@ -1,10 +1,14 @@
 FROM python:3.9-slim
 
-WORKDIR /app
+WORKDIR /api
 
-COPY . /app
+COPY api/requirements.txt /api/
+
+RUN ls -la /api/requirements.txt
 
 RUN pip install --no-cache-dir -r requirements.txt
+
+COPY api/ /api/
 
 EXPOSE 8000
 
