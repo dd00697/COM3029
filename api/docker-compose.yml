@@ -12,4 +12,4 @@ services:
       - PASSWORD=${PASSWORD}
     volumes:
       - .:/app
-    command: bash -c "source run_app.sh"
+    command: sh run_app.sh [DEVICE]
