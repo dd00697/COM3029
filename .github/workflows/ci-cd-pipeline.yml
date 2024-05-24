@@ -23,14 +23,16 @@ jobs:
 
     - name: Install dependencies
       run: |
+        cd api
         python -m pip install --upgrade pip
-        pip install -r api/requirements.txt
+        pip install -r requirements.txt
 
     - name: Build Docker image
       run: |
+        cd api
         echo "Listing files in api directory:"
-        ls -la api/
-        docker build -t my_model:latest -f api/Dockerfile .
+        ls -la
+        docker build -t my_model:latest .
 
     - name: Tag Docker image
       run: |
