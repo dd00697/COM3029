@@ -2,6 +2,9 @@ FROM python:3.9-slim
 
 WORKDIR /api
 
+COPY server.crt /api/server.crt
+COPY server.key /api/server.key
+
 # Copy only the requirements file first to leverage Docker cache
 COPY requirements.txt /api/
 RUN ls -la /api/requirements.txt
