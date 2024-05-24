@@ -34,4 +34,4 @@ echo "Database setup completed."
 
 # Run the app
 echo "Starting the app on device: $DEVICE"
-uvicorn app:app --host 0.0.0.0 --port 8000 --ssl-keyfile /api/server.key --ssl-certfile /api/server.crt
+python app.py --device $DEVICE
