@@ -28,7 +28,6 @@ jobs:
 
     - name: Build Docker image
       run: |
-        # Add debugging to ensure requirements.txt is present
         echo "Listing files in api directory:"
         ls -la api/
         docker build -t my_model:latest -f api/Dockerfile .
