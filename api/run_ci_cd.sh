@@ -2,11 +2,6 @@
 echo "Triggering CI/CD pipeline..."
 echo "Running deployment script..."
 
-# Print the current directory and list files for debugging
-echo "Current directory: $(pwd)"
-echo "Contents of current directory:"
-ls -la
-
 # Get the directory of this script
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 

@@ -30,7 +30,7 @@ sh setup_db.sh
 echo "Database setup completed."
 
 # Activate the virtual environment
-#source ~/venvs/nlp/bin/activate
+source ~/venvs/nlp/bin/activate
 
 # Run the app
 echo "Starting the app on device: $DEVICE"
