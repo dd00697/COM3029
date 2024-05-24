@@ -12,3 +12,4 @@ else
   echo "Deployment script failed."
   exit 1
 fi
+
