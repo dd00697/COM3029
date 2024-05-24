@@ -28,7 +28,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t my_model:latest -f api/Dockerfile api/
+        docker build -t my_model:latest -f api/Dockerfile .
 
     - name: Tag Docker image
       run: |
@@ -53,4 +53,10 @@ jobs:
 
     - name: Deploy
       run: |
-        bash api/run_ci_cd.sh
+        cd api
+        bash run_ci_cd.sh
+
+    - name: Run Docker Compose
+      run: |
+        cd api
+        docker-compose up -d
