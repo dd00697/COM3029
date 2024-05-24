@@ -1,15 +1,9 @@
 version: '3.9'
 
 services:
-  app:
-    image: dd000697/my_model:latest
+  web:
+    image: dd00697/my_model:latest
     ports:
       - "8000:8000"
     environment:
-      - HOST=${HOST}
-      - DATABASE=${DATABASE}
-      - DBUSERNAME=${DBUSERNAME}
-      - PASSWORD=${PASSWORD}
-    volumes:
-      - .:/app
-    command: bash -c "source run_app.sh"
+      - SOME_ENV_VAR=some_value
